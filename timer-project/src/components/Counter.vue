@@ -10,11 +10,23 @@
     setInterval(()=>{
         counter.value++;
     }, 1000);
+
+    // partie bouton
+    const boutonDesactive = ref(true);
+
+    setTimeout(()=>{
+        boutonDesactive.value =false;
+    }, 6000);
 </script>
 
 <template>
     <div class="counter">
         <p>temps écoulé : {{ counter }} secondes.</p>
+        <p v-show="counter<=5">Bienvenue (v-show)</p>
+        <p v-if="counter<=5">Bienvenue (v-if)</p>
+        <p v-else-if="counter<=9">Le temps passe...</p>
+        <p v-else>encore du temps passé...</p>
         <p>cad {{ joliC }}</p>
     </div>
+    <button :disabled="boutonDesactive">Recommencer</button>
 </template>
