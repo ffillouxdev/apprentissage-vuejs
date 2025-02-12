@@ -4,7 +4,7 @@ import GestionCourses from './components/GestionCourses.vue';
 
 <template>
   <main>
-    <h1>Ma liste de courses</h1>
+    <h1>Gérer mes courses</h1>
     <GestionCourses/>
   </main>
 </template>
