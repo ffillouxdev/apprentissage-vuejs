@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { CourseModel } from '@/models/CourseModel';
 import { ref } from 'vue';
+import UneCourse from './UneCourse.vue';
 
 const listec = ref<CourseModel[]>([
   { id: 1, name: "navets", urgent: false },
@@ -21,10 +22,29 @@ function addProduct(): void {
         name: nouveauNom.value,
         urgent: nouveauUrgent.value
         });
+  }else{
+
   }
   nouveauNom.value = "";
   nouveauUrgent.value = false;
 }
+
+function emptyList(): void{
+  listec.value = [];
+}
+
+function deleteEle(id : number) : void{
+  console.log("deleteEle id", id);
+  listec.value = listec.value.filter((elt) =>elt.id !== id);
+  console.log(listec.value)
+}
+
+function updateEle(id : number) : void{
+  console.log("updateEle id", id);
+}
+/*  
+
+*/
 </script>
 
 <template>
@@ -34,7 +54,7 @@ function addProduct(): void {
       <div>
         <label>
           Nouvel article:
-          <input v-model.lazy.trim="nouveauNom" />
+          <input v-model.trim="nouveauNom" />
         </label>
         <label>
           <input type="checkbox" v-model="nouveauUrgent" name="urgent" id="urgentCheckbox" />
@@ -42,13 +62,17 @@ function addProduct(): void {
         </label>
       </div>
       <p>Vous souhaitez ajouter : {{ nouveauNom }} <strong v-if="nouveauUrgent">(urgent)</strong></p>
-      <button @click.prevent="addProduct" id="add-button">Ajouter</button>
+      <button @click.prevent="addProduct" :disabled="nouveauNom===''" id="add-button">Ajouter</button>
     </form>
+    <h2>La liste de mes courses</h2>
+    <button @click="emptyList">Vider ma liste de courses</button>
     <ul>
       <li v-for="item in listec" key="item.id">
-        <span :class="{urgent : item.urgent}">{{ item.name }} </span>
-        <strong v-if="item.urgent"> (urgent) </strong>
-        <em> (l'id unique est {{ item.id }})</em>
+        <UneCourse 
+          :itemProps="item"
+          @supprimer="deleteEle"
+          @modifier="updateEle"
+        />
       </li>
     </ul>
   </div>

@@ -1,19 +1,27 @@
 <script setup lang="ts">
 import type { CounterModel } from '@/models/CounterModel';
-import { computed, ref } from 'vue';
+import { computed, onUnmounted, ref } from 'vue';
     
-    const props = defineProps<CounterModel>();
+    const {counter} = defineProps<{ counter : CounterModel}>();
+    const c = ref<number>(counter.debut);
+    let minute:number;
 
-    const c = ref<number>(props.debut);
+    const interval = setInterval(()=>{
+        c.value++;
+        minute = Math.floor(c.value /60)
+    }, 1000);
+
+    const timeout = setTimeout(()=>{
+        boutonDesactive.value =false;
+    }, 6000);
+
     
     const joliC = computed(()=>{
         const secondes = c.value %60;
         const minutes = Math.floor(c.value / 60);
         return `${minutes} minutes et ${secondes} secondes`;
     });
-    setInterval(()=>{
-        c.value++;
-    }, 1000);
+    
 
     // partie bouton
     const boutonDesactive = ref(true);
@@ -33,6 +41,19 @@ import { computed, ref } from 'vue';
             texteBoutonClique.value = element.textContent;
         } 
     }
+
+    const emit = defineEmits<{
+        'supprimer': [ id : string]
+    }>();
+
+    function listenDelete() : void {
+        emit('supprimer', counter.id);
+    }
+
+    onUnmounted(()=>{
+        clearInterval(interval);
+        clearTimeout(timeout);
+    })
 </script>
 
 <template>
@@ -41,11 +62,12 @@ import { computed, ref } from 'vue';
         <p v-if="c<=5">Bienvenue (v-if)</p>
         <p v-else-if="c<=9">Le temps passe...</p>
         <p v-else>encore du temps passé...</p>
-        <p v-if="mode === 'joli'">cad {{ joliC }}</p>
+        <p v-if="counter.mode === 'joli'">cad {{ joliC }}</p>
         <p v-else>temps écoulé : {{ c }} secondes.</p>
         <button :disabled="boutonDesactive" @click="reset">Recommencer</button>
         <button :disabled="boutonDesactive">Test</button>
         <p>Vous avez cliqué sur {{  texteBoutonClique }}</p>
+        <button @click="listenDelete">Supprimer</button>
     </div>
     
 </template>
