@@ -1,25 +1,140 @@
+:root {
+    --fontground: "Inter", "Segoe UI", Arial, sans-serif;
+    --fontground-color: white;
+    --hover-color: #3FB984;
+    --font-size: 1.2rem;
+    --font-main-title: 3rem;
+    --primary-color: white;
+    --secondary-color: #3FB984;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes clignote {
+    0% {
+        opacity: 0;  
+    }
+    10% {
+        opacity: 1;  
+    }
+    50% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;  
+    }
+}
+
 body {
-    font-family: sans-serif;
+    font-family: var(--fontground);
     margin: auto;
-    max-width: 1280px;
-  }
-  
-  .navbar {
-    background-color: #313236;
-    border-radius: 2px;
-    max-width: 800px;
-  }
-  
-  .navbar a {
-    color: #aaa;
-    display: inline-block;
-    font-size: 15px;
+    background: url('/public/assets/bg-vue-website.jpg') center center fixed;
+    background-size: cover;
+    color: var(--fontground-color);
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    z-index: -1;
+}
+
+p,
+a {
+    font-size: var(--font-size);
+}
+
+/**************************************HEADER**************************************/
+header {
+    background-color: transparent;
+    width: 100%;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-icon {
+    width: 40px;
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 0.75rem;
+    margin-right: 25px;
+}
+
+nav a {
+    color: var(--fontground-color);
     text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    color: #ffffff;
-  }
-  
-  
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--hover-color);
+}
+
+/**************************************MAIN CONTENT**************************************/
+main {
+    height: auto;
+}
+
+section{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    height: 91vh;
+    animation: slide-up 1.5s ease-in-out;
+}
+
+.hero-section h1 {
+    font-size: var(--font-main-title);
+}
+
+.cursor-qui-clignote {
+    display: inline-block;
+    width: 20px;
+    height: 35px;
+    opacity: 0;
+    background-color: var(--secondary-color);
+    animation: clignote 1s step-end infinite;
+    animation-delay: 1.5s;
+}
+
+.iut-icon {
+    height: 34px;
+    width: 34px;
+    border-radius: 5px;
+    border: .5px solid black;
+    margin-left: 2px;
+}
+
+/*SECOND SECTION*/
+.skills-section{
+    height: 100vh;
+    background-color: var(--primary-color);
+}
