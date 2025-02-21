@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/mes-courses/',
+  base: '/my-beautiful-vue-app/mes-courses/',
   plugins: [
     vue(),
     vueDevTools(),
