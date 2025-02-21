@@ -36,11 +36,19 @@ function emptyList(): void{
 function deleteEle(id : number) : void{
   console.log("deleteEle id", id);
   listec.value = listec.value.filter((elt) =>elt.id !== id);
-  console.log(listec.value)
+  console.log(listec.value);
 }
 
-function updateEle(id : number) : void{
-  console.log("updateEle id", id);
+function updateEle(id : number, name : string) : void{
+  console.log("updateEle id:", id, "new name:", name);
+  let trouve =  false;
+  for(let i =0; i < listec.value.length && !trouve ; i++){
+    if (id === listec.value[i].id){
+      listec.value[i].name = name;  
+      trouve = true;
+    }
+  }
+  console.log(listec.value);
 }
 /*  
 
@@ -67,7 +75,7 @@ function updateEle(id : number) : void{
     <h2>La liste de mes courses</h2>
     <button @click="emptyList">Vider ma liste de courses</button>
     <ul>
-      <li v-for="item in listec" key="item.id">
+      <li v-for="item in listec" :key="item.id">
         <UneCourse 
           :itemProps="item"
           @supprimer="deleteEle"
