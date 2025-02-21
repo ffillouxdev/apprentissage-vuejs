@@ -6,11 +6,6 @@ image: busybox
 pages:
   stage: deploy
   script:
-    - echo "Building the Vue.js app..."
-    - npm install
-    - npm run build
-    - mkdir -p public/mes-courses
-    - cp -r dist/* public/mes-courses/
     - echo "Deployment complete!"
   artifacts:
     paths:
