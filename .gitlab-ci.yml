@@ -11,5 +11,8 @@ pages:
     paths:
       - public
       - public/mes-courses
+      - public/ma-punition
+      - public/mon-compteur
+
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
