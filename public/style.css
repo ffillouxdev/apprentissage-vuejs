@@ -22,16 +22,19 @@
 
 @keyframes clignote {
     0% {
-        opacity: 0;  
+        opacity: 0;
     }
+
     10% {
-        opacity: 1;  
+        opacity: 1;
     }
+
     50% {
-        opacity: 0; 
+        opacity: 0;
     }
+
     100% {
-        opacity: 1;  
+        opacity: 1;
     }
 }
 
@@ -65,7 +68,6 @@ a {
 header {
     background-color: transparent;
     width: 100%;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,7 +81,7 @@ header {
 nav {
     display: flex;
     gap: 0.75rem;
-    margin-right: 25px;
+    padding-right: 25px;
 }
 
 nav a {
@@ -97,7 +99,7 @@ main {
     height: auto;
 }
 
-section{
+section {
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -107,7 +109,7 @@ section{
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    height: 91vh;
+    height: 94vh;
     animation: slide-up 1.5s ease-in-out;
 }
 
@@ -134,7 +136,28 @@ section{
 }
 
 /*SECOND SECTION*/
-.skills-section{
-    height: 100vh;
+.skills-section {
+    padding-top: 8%;
+    padding-bottom: 8%;
+    min-height: 100vh;
     background-color: var(--primary-color);
+}
+
+.skills-section h2 {
+    font-size: var(--font-main-title);
+}
+
+.skills-section strong {
+    color: var(--hover-color);
+}
+
+
+.skills-section ul,
+h2 {
+    color: black;
+}
+
+.skills-section hr {
+    border: .5px solid black;
+    margin-bottom: 1.5rem;
 }
