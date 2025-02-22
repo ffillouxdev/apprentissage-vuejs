@@ -41,7 +41,7 @@
 body {
     font-family: var(--fontground);
     margin: auto;
-    background: url('/public/assets/bg-vue-website.jpg') center center fixed;
+    background: url('./assets/bg-vue-website.jpg') center center fixed;
     background-size: cover;
     color: var(--fontground-color);
     position: relative;
