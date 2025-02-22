@@ -5,20 +5,25 @@ import { ref } from 'vue';
 
 const user_sentence = ref("");
 const how_many_time_input = ref(10);
+const formIsSubmit = ref(false);
 
 const emit = defineEmits<{
         'submit': [ user_sentence: string,  how_many_time_input: number ],
     }>();
 
 function handleSubmit () : void{
-    emit('submit', user_sentence.value, how_many_time_input.value)
+  formIsSubmit.value = true;
+  emit('submit', user_sentence.value, how_many_time_input.value)
 }
 
 </script>
 <template>
       <h2 class="text-center mb-3 font-bold">Nouvelle punition ?</h2>
-      <p class="validation-message w-full py-1 bg-lime-500 font-bold text-center rounded-xl">
+      <p v-if="false" class="validation-message w-full py-1 bg-lime-500 font-bold text-center rounded-xl">
         Votre punition est terminée.
+      </p>
+      <p v-if="formIsSubmit" class="validation-message w-full py-1 bg-yellow-500 font-bold text-center rounded-xl">
+        Punition en cours d'écriture...
       </p>
     <form @submit.prevent="handleSubmit">
     <fieldset class="border-2 w-full p-2 rounded flex flex-col space-y-4 border-gray-400">

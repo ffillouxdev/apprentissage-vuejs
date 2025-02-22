@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import EcritLignes from './components/EcritLignes.vue';
 import GestionPunition from './components/GestionPunition.vue';
 
-
+const punishment_sentence = ref("")
+const how_many_times_i_have_to_do_it = ref()
 
 function handleSubmit(user_sentence : string, how_many_time_input : number) : void{
   console.log(user_sentence, how_many_time_input )
+  punishment_sentence.value = user_sentence;
+  how_many_times_i_have_to_do_it.value = how_many_time_input;
 }
 </script>
 <template>
@@ -16,7 +20,7 @@ function handleSubmit(user_sentence : string, how_many_time_input : number) : vo
       <p>Il est important de limiter le copier-coller et de retaper du code.</p>
     </div>
     <GestionPunition @submit="handleSubmit"/>
-    <EcritLignes />
+    <EcritLignes :sentence="punishment_sentence" :how_many_times="how_many_times_i_have_to_do_it" />
    
   </main>
 </template>
