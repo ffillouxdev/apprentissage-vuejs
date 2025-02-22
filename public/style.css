@@ -41,7 +41,7 @@
 body {
     font-family: var(--fontground);
     margin: auto;
-    background: url('./assets/bg-vue-website.jpg') center center fixed;
+    background: url('http://p2203403.pages.univ-lyon1.fr/my-beautiful-vue-app/assets/bg-vue-website.jpg') center center fixed;
     background-size: cover;
     color: var(--fontground-color);
     position: relative;
