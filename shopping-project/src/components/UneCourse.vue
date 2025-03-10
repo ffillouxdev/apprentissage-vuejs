@@ -31,10 +31,10 @@
         <div  v-if="!setModif" class="description">
             <span :class="{urgent : itemProps.urgent}">{{ itemProps.name }} </span>
             <strong v-if="itemProps.urgent"> (urgent)</strong>
-        <button @click="updateCourse">Modifier</button>
-        <button @click="deleteElement">Supprimer</button>
+        <button class="btn-modifier" @click="updateCourse">Modifier</button>
+        <button class="btn-suppr" @click="deleteElement">Supprimer</button>
     </div>
-    <form v-if="setModif" class="modify-container" @submit="updateElement">
+    <form v-if="setModif" class="modifier-container" @submit="updateElement">
         <input type="text" v-model="localItem.name" name="">
         <input type="checkbox" v-model="localItem.urgent">
         <button type="submit">Sauver</button>
@@ -45,6 +45,8 @@
 <style scoped>
     .course{
         display: flex;
-        gap: 0.2rem;
+    }
+    .btn-suppr, .btn-modifier{
+        margin-left: 5px;
     }
 </style>

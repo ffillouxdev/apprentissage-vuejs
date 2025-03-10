@@ -57,7 +57,8 @@ function updateEle(id : number, name : string) : void{
 
 <template>
   <div class="gestionnaire">
-    <h2>Ajouter un article:</h2>
+    <div class="ajouter-article">
+      <h2>Ajouter un article:</h2>
     <form>
       <div>
         <label>
@@ -72,25 +73,36 @@ function updateEle(id : number, name : string) : void{
       <p>Vous souhaitez ajouter : {{ nouveauNom }} <strong v-if="nouveauUrgent">(urgent)</strong></p>
       <button @click.prevent="addProduct" :disabled="nouveauNom===''" id="add-button">Ajouter</button>
     </form>
-    <h2>La liste de mes courses</h2>
-    <button @click="emptyList">Vider ma liste de courses</button>
-    <ul>
-      <li v-for="item in listec" :key="item.id">
-        <UneCourse 
+    </div>
+    <div class="liste-des-courses">
+      <h2>La liste de mes courses</h2>
+      <button @click="emptyList">Vider ma liste de courses</button>
+      <ul>
+        <li v-for="item in listec" :key="item.id">
+          <UneCourse 
           :itemProps="item"
           @supprimer="deleteEle"
           @modifier="updateEle"
-        />
-      </li>
-    </ul>
+          />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <style scoped>
+.gestionnaire{
+  width: 70%;
+}
 
 .urgent {
     background-color: yellow;
 }
 
+.ajouter-article {
+  border: 1px black dashed;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 form {
     display: flex;
@@ -102,10 +114,13 @@ form {
     margin-top: 10px;
 }
 
+.liste-des-courses{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
+  border: 1px black solid;
+  margin-top: 10px;
+}
 </style>
-
-<!-- <li v-for="item in listec" :key="item.id">
-  <span :class="{ urgent: item.urgent }">{{ item.name}}</span>
-  <strong v-if="item.urgent">{{" "}} (urgent) {{" "}}</strong>
-  <em>(l'identifiant unique est {{ item.id }})</em>
-</li> -->
