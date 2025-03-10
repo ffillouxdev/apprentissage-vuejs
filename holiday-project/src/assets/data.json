@@ -1,0 +1,130 @@
+{
+  "destinations": [
+    {
+      "name": "Brazil",
+      "slug": "brazil",
+      "image": "brazil.jpg",
+      "id": 1,
+      "description": "all about Brazil, suspendisse lobortis pharetra tempor...",
+      "experiences": [
+        {
+          "name": "Iguaçu Falls",
+          "slug": "iguacu-falls",
+          "image": "iguacu-falls.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Pão de Açúcar",
+          "slug": "pao-de-acucar",
+          "image": "pao-de-acucar.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Sao Paulo",
+          "slug": "sao-paulo",
+          "image": "sao-paulo.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Salvador",
+          "slug": "salvador",
+          "image": "salvador.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        }
+      ]
+    },
+    {
+      "name": "Panama",
+      "slug": "panama",
+      "image": "panama.jpg",
+      "id": 2,
+      "description": "all about Panama. Nam fermentum, leo ac lobortis tincidunt...",
+      "experiences": [
+        {
+          "name": "Panama City",
+          "slug": "panama-city",
+          "image": "panama-city.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Panama Canal",
+          "slug": "panama-canal",
+          "image": "panama-canal.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Bocas del Toro",
+          "slug": "bocas-del-toro",
+          "image": "bocas-del-toro.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Santa Catalina",
+          "slug": "santa-catalina",
+          "image": "santa-catalina.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        }
+      ]
+    },
+    {
+      "name": "Hawaii",
+      "slug": "hawaii",
+      "image": "hawaii.jpg",
+      "id": 3,
+      "description": "all about Hawaii. Etiam iaculis, ex in semper fringilla...",
+      "experiences": [
+        {
+          "name": "Na Pali Coast",
+          "slug": "na-pali-coast",
+          "image": "na-pali-coast.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "O'Ahu's North Shore",
+          "slug": "oahus-north-shore",
+          "image": "oahus-north-shore.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Waikiki Beach",
+          "slug": "waikiki-beach",
+          "image": "waikiki-beach.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Kilauea Volcano",
+          "slug": "kilauea-volcano",
+          "image": "kilauea-volcano.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        }
+      ]
+    },
+    {
+      "name": "Jamaica",
+      "slug": "jamaica",
+      "image": "jamaica.jpg",
+      "id": 4,
+      "description": "all about Jamaica. Suspendisse lobortis pharetra tempor...",
+      "experiences": [
+        {
+          "name": "Tower Isle",
+          "slug": "tower-isle",
+          "image": "tower-isle.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Blue Mountain",
+          "slug": "blue-mountain",
+          "image": "blue-mountain.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        },
+        {
+          "name": "Montego Bay",
+          "slug": "montego-bay",
+          "image": "montego-bay.jpg",
+          "description": "Suspendisse lobortis pharetra tempor..."
+        }
+      ]
+    }
+  ]
+}
