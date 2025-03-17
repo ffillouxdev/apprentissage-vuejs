@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const urlBase = "/my-beautiful-vue-app/vacances/images/";
+const urlBase =  "/my-beautiful-vue-app/vacances/images/";
 
 const {name, image} = defineProps<{ 
     name : string, 
