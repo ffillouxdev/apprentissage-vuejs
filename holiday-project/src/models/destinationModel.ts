@@ -1,10 +1,10 @@
 import type { ExperienceModel } from "./experienceModel";
 
 export interface DestinationModel {
+    id: string;
     name: string;
     slug: string;
     image: string;
-    id: number;
     description: string;
     experiences : ExperienceModel[]
 }

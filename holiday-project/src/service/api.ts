@@ -14,7 +14,7 @@ export const getDestinations = async () => {
     }
 }  
 
-export const getDestinationById = async (id : number) => {
+export const getDestinationById = async (id : string) => {
     try {
         const response = await apiClient.get(`/destinations/${id}`)
         return response.data;

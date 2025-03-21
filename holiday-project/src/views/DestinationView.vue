@@ -1,19 +1,28 @@
 <script setup lang="ts">
 import type { DestinationModel } from '@/models/destinationModel';
 import { getDestinationById } from '@/service/api';
-import { onMounted, ref } from 'vue';
+import {  ref, watchEffect } from 'vue';
 const urlBase =  "/my-beautiful-vue-app/vacances/images/";
+
+const { id } = defineProps<({
+    id: string
+})>()
+
+console.log(id)
 
 const specificDestination = ref<DestinationModel | null>(null);
 const fetchDestination = async () =>{
     try {
-        const response = await getDestinationById(3);
-        specificDestination.value = response;
+        const response = await getDestinationById(id);
+        specificDestination.value = response;   
     } catch (error) {
         console.error("Erreur lors de la récupération des données", error);
     }
 }
-fetchDestination()
+watchEffect(()=> {
+    fetchDestination();
+});
+
 </script>
 <template>
     <div class="destination flex-col h-[92vh] items-center flex justify-center">
