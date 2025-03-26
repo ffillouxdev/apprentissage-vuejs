@@ -2,16 +2,15 @@
 const urlBase =  "/my-beautiful-vue-app/vacances/images/";
 
 const {name, image} = defineProps<{ 
-    id : string,
     name : string, 
     image:string}>();
 </script>
 
 <template>
-    <RouterLink :to="{ name : 'destination', params : { id: id}}" class="card">
+    <div class="card">
         <h2>{{ name }}</h2>
-        <img :src="`${urlBase}${image}`" :alt="`Image principale de ${name}`" class="">
-    </RouterLink>
+        <img :src="`${urlBase}${image}`" :alt="`Image principale de ${name}`" class="w-80  h-auto">
+    </div>
 </template>
 <style scoped>
 </style>

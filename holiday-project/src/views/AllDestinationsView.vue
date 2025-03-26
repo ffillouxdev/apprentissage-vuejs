@@ -24,7 +24,9 @@ watchEffect(()=>{
 <template>
     <h1 class="font-bold text-2xl">All destinations</h1>
     <div v-if="tabDestinations !== null" class="destinations flex-col md:flex-row my-10 flex space-x-4 items-center justify-center w-full">
-        <CardComponent v-for="item in tabDestinations" :image="item.image" :name="item.name" :id="item.id"/>
+        <RouterLink v-for="item in tabDestinations" :to="{ name : 'destination', params : { id: item.id}}" :key="item.id">
+            <CardComponent :image="item.image" :name="item.name"/>
+        </RouterLink>
     </div>
     <div v-else class="destinations flex-col md:flex-row my-10 flex space-x-4 items-center justify-center w-full">
         <p>Il n'y rien ici</p>
