@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/my-beautiful-vue-app/tactic-todo/',
   plugins: [
     vue(),
     vueDevTools(),
