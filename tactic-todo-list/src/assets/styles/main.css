@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Couleurs si le mode de l'ordinaateur de l'utilisateur est en mode normal */
+:root {
+  --primary: #000000;
+  --secondary: #FAFAFA;
+  --foreground-primary: #ffffff;
+  --foreground-secondary:#7A7898;
+
+}
+
+/* Thème tailwind pour ajouter des nouvelles options de style */
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-foreground-primary: var(--foreground-primary);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Couleurs si le mode de l'ordinaateur de l'utilisateur est en mode sombre */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #ffffff;
+    --secondary: #FAFAFA;
+    --foreground-primary: #000000;
+    --foreground-secondary:#7A7898;
+
+  }
+}
+
+
+/*Transition du composant Transition de la sidebar en mode téléphone mobile*/
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.3s ease;
+}
+.slide-enter-from {
+  transform: translateX(-100%);
+}
+.slide-enter-to {
+  transform: translateX(0);
+}
+.slide-leave-from {
+  transform: translateX(0);
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+}
