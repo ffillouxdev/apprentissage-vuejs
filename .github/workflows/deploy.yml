@@ -32,6 +32,12 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+                ./public/mes-courses
+                ./public/ma-punition
+                ./public/mon-compteur
+                ./public/vacances
+                ./public/mon-blog
+                ./public/tactic-todo
 
       - name: Deploy to GitHub Pages
         id: deployment
