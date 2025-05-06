@@ -1,4 +1,3 @@
-# .github/workflows/deploy.yml
 name: Deploy static site to GitHub Pages
 
 on:
@@ -37,3 +36,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          enablement: true
