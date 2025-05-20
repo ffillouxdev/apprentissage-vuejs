@@ -1,5 +1,11 @@
-## Lien vers mon site
-http://p2203403.pages.univ-lyon1.fr/my-beautiful-vue-app
+# Projet qui présente tout ce que j'ai appliqué pour apprendre Vue.js en classe de BUT2
+
+public/
+  - mes projets après build
+
+![bg-website](public/assets/bg-vue-website.jpg)
+
+
 
 Example plain HTML site using GitLab Pages.
 
